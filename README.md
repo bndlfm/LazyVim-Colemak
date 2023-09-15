@@ -3,5 +3,7 @@ Hacky version of LazyVim adopted for Colemak using theniceboy/nvim style movemen
 
 Pull requests welcome :3c
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+
+***Refer to the [documentation](https://lazyvim.github.io/installation) for more information about LazyVim.***
+
+***Keep in mind that this is a seperate project from LazyVim with different keybindings. Refer to lua/config and lua/plugins for more information.***
