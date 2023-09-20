@@ -1,5 +1,5 @@
 # 💤 LazyVim
-Hacky version of LazyVim adopted for Colemak using theniceboy/nvim style movement keys.
+Hacky version of LazyVim adopted for Colemak keybindings.
 
 Pull requests welcome :3c
 
