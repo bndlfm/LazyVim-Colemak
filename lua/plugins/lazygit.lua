@@ -1,7 +1,8 @@
 return {
   "kdheepak/lazygit.nvim",
-  keys = {
-    vim.keymap.set("n", "<C-g>", ":LazyGit<CR>", { desc = "LazyGit" }),
+  --  lazy = "VeryLazy",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
   },
   config = function()
     vim.g.lazygit_floating_window_winblend = 0

@@ -1,10 +1,10 @@
--- stylua: ignore
 --### if true then return {} end ###--       This is the boilerplate "this is an example so don't load"
 
 return {
   -- add gruvbox
+  { "rebelot/kanagawa.nvim" },
   { "shaunsingh/nord.nvim" },
-
+  { "ellisonleao/gruvbox.nvim" },
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
@@ -16,12 +16,10 @@ return {
   -- change trouble config
   {
     "folke/trouble.nvim",
+    enabled = true,
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },
-
-  -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
 
   -- add symbols-outline
   {
@@ -95,6 +93,7 @@ return {
       ---@type lspconfig.options
       servers = {
         -- tsserver will be automatically installed with mason and loaded with lspconfig
+        awkls = {},
         bashls = {},
         pyright = {},
         tsserver = {},
@@ -106,7 +105,6 @@ return {
         -- example to setup with typescript.nvim
         tsserver = function(_, opts)
           require("typescript").setup({ server = opts })
-
         end,
         -- Specify * to use this function as a fallback for any server
         -- ["*"] = function(server, opts) end,
@@ -195,7 +193,6 @@ return {
     },
   },
 
-
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
   {
@@ -250,45 +247,45 @@ return {
 
   {
     "echasnovski/mini.ai",
-      event = "VeryLazy",
-      opts = ({
-        mappings = {
-          -- Main textobject prefixes
-          around = 'a',
-          inside = 'k',
-          -- Next/last variants
-          around_next = 'an',
-          inside_next = 'kn',
-          around_last = 'al',
-          inside_last = 'kl',
-          -- Move cursor to corresponding edge of `a` textobject
-          goto_left = 'g[',
-          goto_right = 'g]',
-        },
-        -- Number of lines within which textobject is searched
-        n_lines = 500,
-        -- Whether to disable showing non-error feedback
-        silent = false
-      }),
+    event = "VeryLazy",
+    opts = {
+      mappings = {
+        -- Main textobject prefixes
+        around = "a",
+        inside = "k",
+        -- Next/last variants
+        around_next = "an",
+        inside_next = "kn",
+        around_last = "al",
+        inside_last = "kl",
+        -- Move cursor to corresponding edge of `a` textobject
+        goto_left = "g[",
+        goto_right = "g]",
+      },
+      -- Number of lines within which textobject is searched
+      n_lines = 500,
+      -- Whether to disable showing non-error feedback
+      silent = false,
+    },
   },
   {
     "echasnovski/mini.indentscope",
-      enabled = true,
-      event = "VeryLazy",
-      opts = ({
-        mappings = {
-          -- Textobjects
-          object_scope = 'kk',
-          object_scope_with_border = 'ak',
-          -- Motions (jump to respective border line; if not present - body line)
-          goto_top = '[k',
-          goto_bottom = ']k',
-        },
-        options = {
-          -- Whether to use cursor column when computing reference indent.
-          -- Useful to see incremental scopes with horizontal cursor movements.
-          indent_at_cursor = true,
-        },
-    })
+    enabled = true,
+    event = "VeryLazy",
+    opts = {
+      mappings = {
+        -- Textobjects
+        object_scope = "kk",
+        object_scope_with_border = "ak",
+        -- Motions (jump to respective border line; if not present - body line)
+        goto_top = "[k",
+        goto_bottom = "]k",
+      },
+      options = {
+        -- Whether to use cursor column when computing reference indent.
+        -- Useful to see incremental scopes with horizontal cursor movements.
+        indent_at_cursor = true,
+      },
+    },
   },
 }
