@@ -5,8 +5,8 @@ vim.o.colorcolumn = 100
 vim.o.completeopt = "longest,noinsert,menuone,noselect,preview"
 vim.o.cursorline = true
 vim.o.expandtab = true
-vim.o.foldmethod = "indent"
-vim.o.foldlevel = 99
+vim.wo.foldmethod = "marker"
+vim.wo.foldlevel = 99
 vim.o.foldenable = true
 vim.o.inccommand = "split"
 vim.o.indentexpr = ""
@@ -15,6 +15,7 @@ vim.o.lazyredraw = false
 vim.o.list = true
 vim.o.listchars = "tab:| ,trail:▫"
 vim.bo.modeline = true
+vim.go.modelines = 5
 vim.g.neoterm_autoscroll = 1
 vim.o.number = true
 vim.o.relativenumber = true
@@ -34,17 +35,17 @@ vim.o.visualbell = true
 vim.o.updatetime = 100
 vim.o.viewoptions = "cursor,folds,slash,unix"
 vim.o.virtualedit = "block"
-vim.o.wrap = true
-
+vim.wo.wrap = true
+vim.o.undolevels = 10000
 vim.cmd([[
-  silent !mkdir -p $HOME/.config/nvim/tmp/backup
-  silent !mkdir -p $HOME/.config/nvim/tmp/undo
-  set backupdir=$HOME/.config/nvim/tmp/backup,.
-  set directory=$HOME/.config/nvim/tmp/backup,.
-  if has ('persistent_undo' )
-    set undofile
-    set undodir=$HOME/.config/nvim/tmp/undo,.
-  endif
+    silent !mkdir -p $home/.config/nvim/tmp/backup
+    silent !mkdir -p $HOME/.config/nvim/tmp/undo
+    set backupdir=$HOME/.config/nvim/tmp/backup,.
+    set directory=$HOME/.config/nvim/tmp/backup,.
+    if has ('persistent_undo' )
+        set undofile
+        set undodir=$HOME/.config/nvim/tmp/undo,.
+    endif
 ]])
 
 vim.cmd([[

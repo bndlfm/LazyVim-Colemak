@@ -72,8 +72,8 @@ vim.keymap.set({ "n", "v" }, "W", "5w", { desc = "5w -> W" })
 vim.keymap.set({ "n", "v" }, "B", "5b", { desc = "5b -> B" })
 
 -- SET h (SAME AS n, CURSOR LEFT) TO 'END OF WORD'
-vim.keymap.set("n", "<C-n>", "e", { desc = "Move cursor to end of word" })
-
+vim.keymap.set("n", "l", "e", { desc = "Move cursor to end of word" })
+vim.keymap.set("n", "L", "5e", { desc = "5e -> L" })
 -- CTRL + U OR E WILL MOVE UP/DOWN THE VIEW PORT WITHOUT MOVING THE CURSOR
 vim.keymap.set({ "n", "v" }, "<C-e>", "5<C-y>", { desc = "Move viewport ⇧" })
 vim.keymap.set({ "n", "v" }, "<C-n>", "5<C-e>", { desc = "Move viewport ⇩" })
